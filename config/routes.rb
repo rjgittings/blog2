@@ -1,5 +1,6 @@
   Rails.application.routes.draw do
 
+  resources :comments
   resources :posts, only: [:index, :create, :destroy]
   post "/signup", to: "users#create"
   delete '/posts/:id', to: "posts#destroy"

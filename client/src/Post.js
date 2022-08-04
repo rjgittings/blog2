@@ -53,7 +53,7 @@ const [text, setText] = useState("")
 
             <Box style={ color }>
             <h1>{title}</h1>
-            <p>by: {post.user.username}</p>
+                <p>by: {post.user.first_name} { post.user.last_name}</p>
             <div>{body}</div>
             <br/>
                 <form onSubmit={postComment}>

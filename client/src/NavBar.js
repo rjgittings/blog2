@@ -18,7 +18,9 @@ function NavBar({ user, setUser }) {
                 <br/>
                 <br/>
                 <Button>
+                    <a href="#create-new-form" style={{ color: "black", textDecoration: "none" }}>
                     New Post
+                </a>
                 </Button>
                 <Button onClick={handleLogoutClick}>
                     Logout

@@ -74,7 +74,7 @@ function PostList({user}) {
                 <form>
                     <WrapperChild>
                         <h2>Create Post</h2>
-                        <form >
+                        <form id="create-new-form">
                             <FormField>
                                 <Label htmlFor="title">Title</Label>
                                 <Input

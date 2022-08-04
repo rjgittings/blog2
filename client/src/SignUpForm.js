@@ -5,7 +5,9 @@ function SignUpForm({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    const [imageUrl, setImageUrl] = useState("");
+    const [first_name, setFirst_Name] = useState("");
+    const [last_name, setLast_Name] = useState("");
+    const [img, setImg] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -19,9 +21,12 @@ function SignUpForm({ onLogin }) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                username,
-                password,
+                first_name: first_name,
+                last_name: last_name, 
+                username: username,
+                password: password,
                 password_confirmation: passwordConfirmation,
+                img: img
             }),
         }).then((r) => {
             setIsLoading(false);
@@ -35,6 +40,26 @@ function SignUpForm({ onLogin }) {
 
     return (
         <form onSubmit={handleSubmit}>
+            <FormField>
+                <Label htmlFor="first_name">Frist Name</Label>
+                <Input
+                    type="text"
+                    id="first_name"
+                    autoComplete="off"
+                    value={first_name}
+                    onChange={(e) => setFirst_Name(e.target.value)}
+                />
+            </FormField>
+            <FormField>
+                <Label htmlFor="last_name">Last Name</Label>
+                <Input
+                    type="text"
+                    id="last_name"
+                    autoComplete="off"
+                    value={last_name}
+                    onChange={(e) => setLast_Name(e.target.value)}
+                />
+            </FormField>
             <FormField>
                 <Label htmlFor="username">Username</Label>
                 <Input
@@ -63,6 +88,16 @@ function SignUpForm({ onLogin }) {
                     value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                     autoComplete="current-password"
+                />
+            </FormField>
+            <FormField>
+                <Label htmlFor="image">Profile Image</Label>
+                <Input
+                    type="text"
+                    id="username"
+                    autoComplete="off"
+                    value={img}
+                    onChange={(e) => setImg(e.target.value)}
                 />
             </FormField>
 
